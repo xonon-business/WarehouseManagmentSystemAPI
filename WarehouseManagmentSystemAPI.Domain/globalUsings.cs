@@ -8,3 +8,6 @@ global using System.Linq.Expressions;
 global using WarehouseManagmentSystemAPI.Domain.Entities.BaseClasses;
 global using System.ComponentModel.DataAnnotations;
 global using System.ComponentModel.DataAnnotations.Schema;
+global using WarehouseManagmentSystemAPI.Domain.Entities.UserEntityRoot;
+global using ResturantWebApi.Domain.Entities;
+global using ResturantWebApi.Domain.Entities.OrderEntityRoot;
