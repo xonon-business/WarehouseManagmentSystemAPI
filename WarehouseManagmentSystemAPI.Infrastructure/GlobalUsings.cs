@@ -1,0 +1,11 @@
+﻿global using ResturantWebApi.Domain.Entities;
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using Microsoft.EntityFrameworkCore;
+global using WarehouseManagmentSystemAPI.Infrastructure.FluentApis;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using ResturantWebApi.Domain.Entities.OrderEntityRoot;
+global using WarehouseManagmentSystemAPI.Domain.IRepositories;

@@ -8,7 +8,6 @@ namespace ResturantWebApi.Domain.Entities
         [Key]
         public Guid Id { get; set; }
         public string CategoryName { get; set; }
-        public Guid ProductId { get; set; }
         public List<ProductEntity> ProductEntities { get; set; }
 
     }

@@ -11,3 +11,6 @@ global using System.ComponentModel.DataAnnotations.Schema;
 global using WarehouseManagmentSystemAPI.Domain.Entities.UserEntityRoot;
 global using ResturantWebApi.Domain.Entities;
 global using ResturantWebApi.Domain.Entities.OrderEntityRoot;
+global using WarehouseManagmentSystemAPI.Domain.IRepositories;
+global using WarehouseManagmentSystemAPI.Domain.UniteOfWork;
+global using WarehouseManagmentSystemAPI.Infrastructure;
