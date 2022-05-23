@@ -1,6 +1,8 @@
 ﻿
 
-namespace WarehouseManagmentSystemAPI.Domain.Entities
+
+
+namespace WarehouseManagmentSystemAPI.Infrastructure.Entities
 {
     public class CategoryEntity
     {

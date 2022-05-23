@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace WarehouseManagmentSystemAPI.Services.IServices
 {
-    internal class IProductsServices
+    public interface IProductsServices
     {
-
+        public void CreateProduct(ProductsDto productsDto);
     }
 }

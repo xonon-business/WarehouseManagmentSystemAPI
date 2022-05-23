@@ -19,9 +19,7 @@
     </PackageReference>
   </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\WarehouseManagmentSystemAPI.Infrastructure\WarehouseManagmentSystemAPI.Infrastructure.csproj" />
-	</ItemGroup>
+	
 
 
 </Project>

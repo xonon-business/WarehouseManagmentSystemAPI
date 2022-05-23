@@ -5,13 +5,11 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarehouseManagmentSystemAPI", "WarehouseManagmentSystemAPI\WarehouseManagmentSystemAPI.csproj", "{913D7E63-1E01-444B-B0D1-94D41A125844}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarehouseManagmentSystemAPI.Domain", "WarehouseManagmentSystemAPI.Domain\WarehouseManagmentSystemAPI.Domain.csproj", "{7DFF2AD9-16B7-4916-B156-298D903F9CBA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarehouseManagmentSystemAPI.Infrastructure", "WarehouseManagmentSystemAPI.Infrastructure\WarehouseManagmentSystemAPI.Infrastructure.csproj", "{5A7928C7-BD97-44AC-8D99-54E69B233B60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagmentSystemAPI.Dtos", "WarehouseManagmentSystemAPI.Dtos\WarehouseManagmentSystemAPI.Dtos.csproj", "{B9CD70B9-F00F-4863-B4CE-1E871B164A8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarehouseManagmentSystemAPI.Dtos", "WarehouseManagmentSystemAPI.Dtos\WarehouseManagmentSystemAPI.Dtos.csproj", "{B9CD70B9-F00F-4863-B4CE-1E871B164A8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagmentSystemAPI.Services", "WarehouseManagmentSystemAPI.Services\WarehouseManagmentSystemAPI.Services.csproj", "{C0A309BF-5F91-415E-9663-A415F82C7128}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarehouseManagmentSystemAPI.Services", "WarehouseManagmentSystemAPI.Services\WarehouseManagmentSystemAPI.Services.csproj", "{C0A309BF-5F91-415E-9663-A415F82C7128}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{913D7E63-1E01-444B-B0D1-94D41A125844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{913D7E63-1E01-444B-B0D1-94D41A125844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{913D7E63-1E01-444B-B0D1-94D41A125844}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7DFF2AD9-16B7-4916-B156-298D903F9CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7DFF2AD9-16B7-4916-B156-298D903F9CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7DFF2AD9-16B7-4916-B156-298D903F9CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7DFF2AD9-16B7-4916-B156-298D903F9CBA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5A7928C7-BD97-44AC-8D99-54E69B233B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5A7928C7-BD97-44AC-8D99-54E69B233B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A7928C7-BD97-44AC-8D99-54E69B233B60}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,8 +1,8 @@
 ﻿
 
-namespace WarehouseManagmentSystemAPI.Domain.Entities
+namespace WarehouseManagmentSystemAPI.Dtos
 {
-    public class StockEntity
+    public class StockDto
     {
         public Guid ProductId { get; set;}
         public ProductEntity ProductEntity { get; set;}

@@ -2,11 +2,11 @@
 
 namespace WarehouseManagmentSystemAPI.Domain.Entities.OrderEntityRoot
 {
-    public class OrdersToCustomers
+    public class OrdersToCustomersEntity
     {
         public Guid CustomerId { get; set; }
-        public CustomerEntity CustomerEntity { get; set; }
-        public OrderEntity  OrderEntity { get; set; }
+        public CustomerEntity Customers { get; set; }
+        public OrderEntity  Orders { get; set; }
         public Guid OrderId { get; set; }
     }
 }

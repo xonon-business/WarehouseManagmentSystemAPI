@@ -1,6 +1,6 @@
 ﻿
 
-namespace WarehouseManagmentSystemAPI.Domain.Entities.BaseClasses
+namespace WarehouseManagmentSystemAPI.Infrastructure.Entities.BaseClasses
 {
     public class AddressBaseClass
     { 

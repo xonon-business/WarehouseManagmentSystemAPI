@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
 
 namespace WarehouseManagmentSystemAPI.Dtos
 {
@@ -16,11 +12,10 @@ namespace WarehouseManagmentSystemAPI.Dtos
         public int? ReOrderPoint { get; set; }
         public double? ProductSalePrice { get; set; }
         public double? ProductCostPrice { get; set; }
-
-        [ForeignKey("Category")]
-        public Guid CategoryIdFK { get; set; }
-        public CategoryEntity Category { get; set; }
-        public byte[] ProductImage { get; set; }
-
+        public byte[]? ProductImage { get; set; }
+        public string CategoryType { get; set; }
+        public int Quantity_Sold { get; set; }
+        public double Price_Per_Unit { get; set; }
+        public double Total_Item_Sold { get; set; }
     }
 }

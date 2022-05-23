@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 
-namespace WarehouseManagmentSystemAPI.Domain
+
+
+namespace WarehouseManagmentSystemAPI.Infrastructure
 {
     public class UnitOfWorkImp : IUnitOfWork
     {
@@ -14,6 +12,14 @@ namespace WarehouseManagmentSystemAPI.Domain
         public IBaseRepository<CategoryEntity> Categories { get; private set; }
         public IBaseRepository<CustomerEntity> Customers { get; private set; }
 
+        public IBaseRepository<StockEntity> Stocks { get; private set; }
+
+        public IBaseRepository<OrderEntity> Orders { get; private set; }
+
+        public IBaseRepository<UserEntity> Users { get; private set; }
+
+        public IBaseRepository<RoleEntity> Roles { get; private set; }
+
         public UnitOfWorkImp(ApplicationDbContext db)
         {
             _db = db;
@@ -21,6 +27,10 @@ namespace WarehouseManagmentSystemAPI.Domain
             Products = new BaseRepositoryImp<ProductEntity>(_db);
             Categories = new BaseRepositoryImp<CategoryEntity>(_db);
             Customers = new BaseRepositoryImp<CustomerEntity>(_db);
+            Stocks = new BaseRepositoryImp<StockEntity>(_db);
+            Orders = new BaseRepositoryImp<OrderEntity>(_db);
+            Users = new BaseRepositoryImp<UserEntity>(_db);
+            Roles = new BaseRepositoryImp<RoleEntity>(_db);
 
         }
 

@@ -1,6 +1,7 @@
 ﻿
 
-namespace WarehouseManagmentSystemAPI.Domain.IRepositories
+
+namespace WarehouseManagmentSystemAPI.Infrastructure.IRepositories
 {
     public interface IBaseRepository<T> where T:class
     {

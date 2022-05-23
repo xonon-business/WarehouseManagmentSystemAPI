@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WarehouseManagmentSystemAPI.Domain\WarehouseManagmentSystemAPI.Domain.csproj" />
+    <ProjectReference Include="..\WarehouseManagmentSystemAPI.Infrastructure\WarehouseManagmentSystemAPI.Infrastructure.csproj" />
   </ItemGroup>
+
+ 
 
 </Project>
