@@ -1,2 +1,4 @@
 ﻿global using WarehouseManagmentSystemAPI.Services.IServices;
 global using WarehouseManagmentSystemAPI.Dtos;
+global using WarehouseManagmentSystemAPI.Dtos.UserDtoRoot;
+global using WarehouseManagmentSystemAPI.Infrastructure.IRepositories;

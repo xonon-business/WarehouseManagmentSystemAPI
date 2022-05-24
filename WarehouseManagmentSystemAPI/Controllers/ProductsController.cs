@@ -24,13 +24,13 @@ namespace WarehouseManagmentSystemAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProductById(Guid id)
         {
-            return Ok(await IprodcutServices.GetById(id));
+            return Ok(await IprodcutServices.GetByIdAsync(id));
         }
 
         [HttpGet("GetByName")]
         public async Task<IActionResult> GetByName(string name)
         {
-            if (IprodcutServices.GetByName(name) == null)
+            if (IprodcutServices.FindAnyAsync(name) == null)
             {
                 return NotFound("The searched item not found!");
             }

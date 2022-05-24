@@ -4,6 +4,6 @@ namespace WarehouseManagmentSystemAPI.Services.IServices
 {
     public interface IProductsServices
     {
-        public void CreateProduct(ProductsDto productsDto);
+       public ProductsDto GetProductByName(string productName);
     }
 }

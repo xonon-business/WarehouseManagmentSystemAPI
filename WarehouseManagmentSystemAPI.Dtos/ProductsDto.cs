@@ -17,5 +17,7 @@ namespace WarehouseManagmentSystemAPI.Dtos
         public int Quantity_Sold { get; set; }
         public double Price_Per_Unit { get; set; }
         public double Total_Item_Sold { get; set; }
+
+        public string? Message { get; set; } // this is message to display the status code 
     }
 }

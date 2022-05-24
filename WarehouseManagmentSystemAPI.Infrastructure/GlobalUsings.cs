@@ -17,7 +17,6 @@ global using WarehouseManagmentSystemAPI.Infrastructure.Entities.UserEntityRoot;
 global using WarehouseManagmentSystemAPI.Infrastructure.Entities.BaseClasses;
 global using WarehouseManagmentSystemAPI.Infrastructure.Entities.OrderEntityRoot;
 global using WarehouseManagmentSystemAPI.Infrastructure.OrderEntityRoot;
-
-
+global using WarehouseManagmentSystemAPI.Infrastructure.IRepositories;
 
 

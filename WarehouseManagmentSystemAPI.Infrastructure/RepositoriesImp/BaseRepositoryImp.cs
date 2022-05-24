@@ -124,5 +124,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.RepositoriesImp
             _db.SaveChanges();
             return TT;
         }
+
+        
     }
 }
