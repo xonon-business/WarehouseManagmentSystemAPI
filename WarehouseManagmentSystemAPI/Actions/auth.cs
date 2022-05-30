@@ -1,38 +1,53 @@
-//using Dapper;
-//using MySql.Data.MySqlClient;
-//using BCrypt.Net;
-//using WarehouseManagmentSystemAPI.Models;
+using BCrypt.Net;
+using WarehouseManagmentSystemAPI.Dtos;
+
+/**
+    Hey Arif here just change DBContext to the name of our context and don't forget to add
+    the _UserDto.cs file to DbConext class. plus change the _UserDto.cs to a more appropriate name.
+**/
 
 
-//AuthApiAction auth = new AuthApiAction();
+namespace WarehouseManagmentSystemAPI.Actions
+{
+   class AuthApiAction
+   {
+      void login(string email, string password) {
+            DBContext context = new DBContext();
+            _UserDto user = context.User.Where(u => u.email == email).Single();
+            if (!user) {
+                return new {
+                    errCode = 9150,
+                    message = "[Error] Email does not exsit" 
+                };
+            }
+            var hashedPassword = user.password;
+            if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
+            {
+                return user;
+            } else {
+                return new { error = 9200, message = "[Error] Password does not match email" };
+            }
+        }
 
-//namespace WarehouseManagmentSystemAPI.Actions
-//{
-//    class AuthApiAction
-//    {
-//        public void login(string email, string password)
-//        {
-//            string ConnectionString = "Server=lru0fksl5pbm.us-east-3.psdb.cloud;Database=wms-app;user=d459ozkgvaqj;password=pscale_pw_-zkysvQC_ouYuVsqPyjV_8S8zWOE0WLw12BuK_4NYUQ;SslMode=VerifyFull;";
-//            var db = new MySqlConnection(ConnectionString);
-//            var user = db.Query<User>($"SELECT * FROM User WHERE email=\"{email}\"");
-//            // gets hashed password
-//            string HashedPassword = string.Join(Environment.NewLine, user.Select(e => $"{e.password}"));
-//            // gets user id 
-//            // string UserId = string.Join(Environment.NewLine, user.Select(e => $"{e.id}"));
-//            if (BCrypt.Net.BCrypt.Verify(password, HashedPassword))
-//            {
-//                Console.WriteLine(HashedPassword);
-//            }
-//        }
+        void register(string email, string password, string firstName, string lastName) {
+            DBContext context = new DBContext();
 
+            if (context.User.Any(u => u.email == email)) return new { 
+                error = 9100, 
+                message = "[Error] This email is already in use"
+            };
 
-//        public void register(string email, string password, string firstName, string lastName)
-//        {
-//            string ConnectionString = "Server=lru0fksl5pbm.us-east-3.psdb.cloud;Database=wms-app;user=d459ozkgvaqj;password=pscale_pw_-zkysvQC_ouYuVsqPyjV_8S8zWOE0WLw12BuK_4NYUQ;SslMode=VerifyFull;";
-//            var db = new MySqlConnection(ConnectionString);
-//            var HashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-//            var sql = $"INSERT INTO User (id, email, password, firstName, lastName) VALUES(\"{Guid.NewGuid()}\", \"{email.ToString()}\",\"{HashedPassword}\", \"{firstName}\", \"{lastName}\")";
-//            db.Query<User>(sql);
-//        }
-//    }
-//}
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+            var user = new _UserDto{
+                firstName = firstName,
+                lastName = lastName,
+                email = email,
+                password = hashedPassword
+            };
+
+            context.User.Add(user);
+            context.SaveChanges();
+            return user;
+        }
+   }
+}
