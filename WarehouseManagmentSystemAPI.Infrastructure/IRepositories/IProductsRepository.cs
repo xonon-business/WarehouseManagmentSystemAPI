@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WarehouseManagmentSystemAPI.Infrastructure.IRepositories
 {
-    public interface IProductsRepository
+    public interface IProductsRepository:IBaseRepository<ProductEntity>
     {
         public ProductEntity GetProductByName(string name);
         public Task<ProductEntity> GetProductByNameAsync(string name);

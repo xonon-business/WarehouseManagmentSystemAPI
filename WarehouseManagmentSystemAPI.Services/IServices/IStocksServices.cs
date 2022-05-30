@@ -4,9 +4,9 @@ namespace WarehouseManagmentSystemAPI.Services.IServices
 {
     public interface IStocksServices
     {
-        public void CreateProduct(ProductsDto productsDto);
-        public void UpdateProduct(ProductsDto productsDto);
+        public void CreateProduct(ProductDto productsDto);
+        public void UpdateProduct(ProductDto productsDto);
         public void DeleteProduct(Guid id);
-        public IEnumerable<ProductsDto> ReadProducts(ProductsDto productsDto);
+        public IEnumerable<ProductDto> ReadProducts(ProductDto productsDto);
     }
 }

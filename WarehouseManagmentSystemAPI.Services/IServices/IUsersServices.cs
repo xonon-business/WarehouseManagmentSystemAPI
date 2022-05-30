@@ -8,9 +8,9 @@ namespace WarehouseManagmentSystemAPI.Services.IServices
 {
     public interface IUsersServices
     {
-        public ProductsDto CreateProduct(ProductsDto productsDto);
-        public ProductsDto UpdateProduct(ProductsDto productsDto);
+        public ProductDto CreateProduct(ProductDto productsDto);
+        public ProductDto UpdateProduct(ProductDto productsDto);
         public void DeleteProduct(Guid id);
-        public IEnumerable<ProductsDto> ReadProducts(ProductsDto productsDto);
+        public IEnumerable<ProductDto> ReadProducts(ProductDto productsDto);
     }
 }

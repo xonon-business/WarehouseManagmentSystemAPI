@@ -2,3 +2,4 @@
 global using WarehouseManagmentSystemAPI.Infrastructure.Entities;
 global using WarehouseManagmentSystemAPI.Infrastructure.Entities.OrderEntityRoot;
 global using System.ComponentModel.DataAnnotations.Schema;
+global using WarehouseManagmentSystemAPI.Dtos.BaseClasses;

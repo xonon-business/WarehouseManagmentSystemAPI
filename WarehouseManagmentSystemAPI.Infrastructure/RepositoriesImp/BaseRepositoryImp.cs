@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace WarehouseManagmentSystemAPI.Infrastructure.RepositoriesImp
 {
     public class BaseRepositoryImp<T> : IBaseRepository<T> where T : class
@@ -109,22 +103,12 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.RepositoriesImp
             return TT;
         }
 
-        public T UpdateById(Guid id)
+        public async Task<T> UpdateAsync(T TT)
         {
-            var TT = GetById(id);
             _db.Set<T>().Update(TT);
             _db.SaveChanges();
             return TT;
         }
 
-        public async Task<T> UpdateByIdAsync(Guid id)
-        {
-            var TT = await GetByIdAsync(id);
-            _db.Set<T>().Update(TT);
-            _db.SaveChanges();
-            return TT;
-        }
-
-        
     }
 }

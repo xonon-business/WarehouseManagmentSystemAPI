@@ -4,6 +4,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.OrderEntityRoot
 {
     public class OrderEntity
     {
+        [Key]
         public Guid OrderId { get; set; }
         public string OrderStatus { get; set; }
         public DateTime OrderDate { get; set; }

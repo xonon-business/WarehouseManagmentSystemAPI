@@ -6,6 +6,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.FluentApis
     {
         public void Configure(EntityTypeBuilder<StockEntity> builder)
         {
+            builder.HasKey(s => s.StockId);
         }
     }
 }

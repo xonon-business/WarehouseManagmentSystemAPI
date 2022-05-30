@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using WarehouseManagmentSystemAPI.Dtos;
+﻿
 
 namespace WarehouseManagmentSystemAPI.Controllers
 {
@@ -16,26 +14,23 @@ namespace WarehouseManagmentSystemAPI.Controllers
         }
 
         [HttpGet("GetAllProducts")]
-        public IActionResult GetAllProducts()
+        public async Task<IActionResult> GetAllProducts()
         {
-            return Ok(IprodcutServices.GetAll());
+            return Ok(await IprodcutServices.GetAllProductsAsync());
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProductById(Guid id)
+
+        public async Task<IActionResult> GetProductByIdAsync(Guid id)
         {
             return Ok(await IprodcutServices.GetByIdAsync(id));
         }
 
         [HttpGet("GetByName")]
-        public async Task<IActionResult> GetByName(string name)
+        public async Task<IActionResult> GetByNameAsync(string name)
         {
-            if (IprodcutServices.FindAnyAsync(name) == null)
-            {
-                return NotFound("The searched item not found!");
-            }
+            return Ok(await IprodcutServices.GetProductByNameAsync(name));
 
-            return Ok(IprodcutServices.GetByName(name));
         }
 
 
@@ -68,40 +63,59 @@ namespace WarehouseManagmentSystemAPI.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> CreateOrUpdateProduct(Guid? id, ProductsDto productDto)
+        [Route("/CreateProductAsync")]
+
+        public async Task<IActionResult> CreateProductAsync(ProductDto dtoObject)
         {
-            if (id == null)
+
+            if (!ModelState.IsValid)
             {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest("Check your input!");
-                }
-
-                IprodcutServices.CreateAndUpdateProduct(productDto, null);
-
-                return Ok(productDto);
-
+                return BadRequest();
             }
 
-            if (id.HasValue)
-            {
-                var product = IprodcutServices.GetById(id);
+            var product = IprodcutServices.Create(dtoObject);
 
-                if (product == null)
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    IprodcutServices.CreateAndUpdateProduct(productDto, id);
-                }
-            }
+            return Created("~api/api/Products/GetAllProducts", product);
 
-            return BadRequest("Something Went Wrong");
 
         }
 
+        [HttpPut]
+        [Route("/UpdateProductAsync")]
 
+        public async Task<IActionResult> UpdateProductAsync(Guid id, ProductDto dtoObject)
+        {
+            if (id == null || id == Guid.Empty)
+            {
+                return NotFound();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            IprodcutServices.UpdateProductById(dtoObject, id);
+
+            return Ok();
+
+        }
+
+        [HttpDelete]
+        [Route("/DeleteProductAsync")]
+
+        public async Task<IActionResult> DeleteProductAsync(Guid id)
+        {
+            if (id == null || id == Guid.Empty)
+            {
+                return NotFound(id);
+            }
+
+            IprodcutServices.Delete(id);
+
+            return NoContent();
+
+        }
 
         //?GET All by Category
 

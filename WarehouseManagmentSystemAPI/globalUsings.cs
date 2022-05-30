@@ -1,1 +1,11 @@
 ﻿global using WarehouseManagmentSystemAPI.Services.IServices;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Http;
+global using WarehouseManagmentSystemAPI.Dtos;
+global using WarehouseManagmentSystemAPI.Infrastructure;
+global using Microsoft.EntityFrameworkCore;
+global using WarehouseManagmentSystemAPI.Services.IServices;
+global using WarehouseManagmentSystemAPI.Services.ServicesImp;
+global using WarehouseManagmentSystemAPI.Infrastructure.UniteOfWork;
+global using WarehouseManagmentSystemAPI.Infrastructure.IRepositories;
+global using WarehouseManagmentSystemAPI.Infrastructure.RepositoriesImp;

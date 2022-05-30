@@ -9,7 +9,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure
     {
         private readonly ApplicationDbContext _db;
         public IProductsRepository Products { get; private set; }
-        public IBaseRepository<CategoryEntity> Categories { get; private set; }
+        public ICategoryRepository Categories { get; private set; }
         public IBaseRepository<CustomerEntity> Customers { get; private set; }
 
         public IBaseRepository<StockEntity> Stocks { get; private set; }
@@ -25,7 +25,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure
             _db = db;
 
             Products = new ProductsRepositoryImp(_db);
-            Categories = new BaseRepositoryImp<CategoryEntity>(_db);
+            Categories = new CategoryRepositoryImp (_db);
             Customers = new BaseRepositoryImp<CustomerEntity>(_db);
             Stocks = new BaseRepositoryImp<StockEntity>(_db);
             Orders = new BaseRepositoryImp<OrderEntity>(_db);
@@ -41,7 +41,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _db.Dispose();
         }
     }
 }

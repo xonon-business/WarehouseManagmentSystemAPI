@@ -14,20 +14,14 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.Entities
         public double? ProductSalePrice { get; set; }
         public double? ProductCostPrice { get; set; }
         public byte[]? ProductImage { get; set; }
-
-
         [ForeignKey("Category")]
         public Guid CategoryIdFK { get; set; }
         public CategoryEntity Category { get; set; }
         public List<OrderToItemsEntity> OrdersItems { get; set;}
         public ICollection<OrderEntity> orders { get; set; }
-
         [ForeignKey("Stock")]
         public Guid StockIdFk { get; set; }
         public StockEntity Stock { get; set; }
-
-
-
 
     }
 }

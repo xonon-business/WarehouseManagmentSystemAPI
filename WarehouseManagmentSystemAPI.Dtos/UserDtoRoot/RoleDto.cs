@@ -8,6 +8,7 @@ namespace WarehouseManagmentSystemAPI.Dtos.UserDtoRoot
 {
     public class RoleDto
     {
+        public Guid RoleId { get; set; }
         public string RoleType { get; set; }
     }
 }

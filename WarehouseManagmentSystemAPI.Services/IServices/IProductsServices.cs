@@ -2,8 +2,12 @@
 
 namespace WarehouseManagmentSystemAPI.Services.IServices
 {
-    public interface IProductsServices
+    public interface IProductsServices:IBaseServices<ProductDto>
     {
-       public ProductsDto GetProductByName(string productName);
+       public Task<ProductDto> GetProductByNameAsync(string productName);
+       public Task<ProductEntity> UpdateProductById(ProductDto obj,Guid id);
+       public  Task<IEnumerable<ProductEntity>> GetAllProductsAsync();
+
+
     }
 }

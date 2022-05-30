@@ -2,3 +2,8 @@
 global using WarehouseManagmentSystemAPI.Dtos;
 global using WarehouseManagmentSystemAPI.Dtos.UserDtoRoot;
 global using WarehouseManagmentSystemAPI.Infrastructure.IRepositories;
+global using AutoMapper;
+global using WarehouseManagmentSystemAPI.Infrastructure.Entities;
+global using WarehouseManagmentSystemAPI.Infrastructure.OrderEntityRoot;
+global using WarehouseManagmentSystemAPI.Infrastructure.Entities.UserEntityRoot;
+global using WarehouseManagmentSystemAPI.Infrastructure.UniteOfWork;
