@@ -33,34 +33,15 @@ namespace WarehouseManagmentSystemAPI.Controllers
 
         }
 
+        [HttpGet("GetProductsWithPrices")]
+        public async Task<IActionResult> GetProductsWithPrices()
+        {
 
+            var productsPricsList = await IprodcutServices.GetProductsPricesList();
 
+            return Ok(productsPricsList);
 
-        //[HttpGet("GetProductsWithPrices")]
-        //public async Task<IActionResult> GetProductsWithPrices()
-        //{
-        //    var productsList = await _ProductRepository.GetAllAsync();
-
-        //    var ProductsName = string.Empty;
-        //    var ProductsPrices = string.Empty;
-
-        //    foreach(var productName in productsList)
-        //    {
-        //        ProductsName = productName.ProductName;
-
-        //        foreach(var productPrice in productsList)
-        //        {
-        //            ProductsPrices = Convert.ToString(productPrice.ProductSalePrice);
-        //        }
-
-        //    }
-
-        //    return Ok(ProductsName+ProductsPrices);
-
-
-        //}
-
-
+        }
 
         [HttpPost]
         [Route("/CreateProductAsync")]
@@ -73,7 +54,7 @@ namespace WarehouseManagmentSystemAPI.Controllers
                 return BadRequest();
             }
 
-            var product = IprodcutServices.Create(dtoObject);
+            var product =  IprodcutServices.Create(dtoObject);
 
             return Created("~api/api/Products/GetAllProducts", product);
 
@@ -95,7 +76,7 @@ namespace WarehouseManagmentSystemAPI.Controllers
                 return BadRequest();
             }
 
-            IprodcutServices.UpdateProductById(dtoObject, id);
+            await IprodcutServices.UpdateProductById(dtoObject, id);
 
             return Ok();
 
@@ -118,10 +99,10 @@ namespace WarehouseManagmentSystemAPI.Controllers
         }
 
         //?GET All by Category
-
         //GET All products with low in stock
         //Get products with quantity
         //Validation for input
+        //Show inventory filiters by a selection from the front end
 
 
     }

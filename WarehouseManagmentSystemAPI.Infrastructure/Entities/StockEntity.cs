@@ -2,6 +2,7 @@
 
 namespace WarehouseManagmentSystemAPI.Infrastructure.Entities
 {
+    [Index(nameof(StockName),IsUnique =true)]
     public class StockEntity
     {
         [Key]

@@ -11,6 +11,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.FluentApis
         {
             builder.HasOne<CategoryEntity>(p => p.Category).WithMany(c => c.ProductEntities).HasForeignKey(p=>p.CategoryIdFK);
             builder.HasOne<StockEntity>(p => p.Stock).WithMany(s => s.ProductEntity).HasForeignKey(p => p.StockIdFk);
+            builder.HasIndex(p => p.ProductName).IsUnique();
         }
     }
 }

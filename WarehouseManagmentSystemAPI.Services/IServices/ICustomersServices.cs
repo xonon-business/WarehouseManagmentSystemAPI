@@ -1,7 +1,7 @@
 ﻿
 namespace WarehouseManagmentSystemAPI.Services.IServices
 {
-    public interface ICustomersServices
+    public interface ICustomersServices:IBaseRepository<CustomerDto>
     {
     }
 }

@@ -11,7 +11,8 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.FluentApis
     {
         public void Configure(EntityTypeBuilder<CategoryEntity> builder)
         {
-            
+            //DataSeeding 
+            builder.HasData(new CategoryEntity { Id = new Guid(), CategoryName = "Meats" });
         }
     }
 }

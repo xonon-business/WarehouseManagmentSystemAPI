@@ -10,7 +10,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure
         private readonly ApplicationDbContext _db;
         public IProductsRepository Products { get; private set; }
         public ICategoryRepository Categories { get; private set; }
-        public IBaseRepository<CustomerEntity> Customers { get; private set; }
+        public ICustomerRepository Customers { get; private set; }
 
         public IBaseRepository<StockEntity> Stocks { get; private set; }
 
@@ -26,7 +26,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure
 
             Products = new ProductsRepositoryImp(_db);
             Categories = new CategoryRepositoryImp (_db);
-            Customers = new BaseRepositoryImp<CustomerEntity>(_db);
+            Customers = new CustomerRepositoryImp(_db);
             Stocks = new BaseRepositoryImp<StockEntity>(_db);
             Orders = new BaseRepositoryImp<OrderEntity>(_db);
             Users = new BaseRepositoryImp<UserEntity>(_db);

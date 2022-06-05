@@ -1,6 +1,7 @@
 ﻿
 namespace WarehouseManagmentSystemAPI.Infrastructure.Entities
 {
+
     public class ProductEntity
     {
         [Key]

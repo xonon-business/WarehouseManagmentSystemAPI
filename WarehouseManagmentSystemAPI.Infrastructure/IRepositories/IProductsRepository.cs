@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace WarehouseManagmentSystemAPI.Infrastructure.IRepositories
 {
@@ -10,6 +6,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.IRepositories
     {
         public ProductEntity GetProductByName(string name);
         public Task<ProductEntity> GetProductByNameAsync(string name);
-
+        public Task<IQueryable<ProductEntity>> GetAllProductsWithPricesAsync();
+        public Task<IQueryable<ProductEntity>> GetProductsWithLowStockAsync();
     }
 }

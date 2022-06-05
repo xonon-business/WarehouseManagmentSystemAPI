@@ -47,8 +47,24 @@ namespace WarehouseManagmentSystemAPI.Services.ServicesImp
 
             return await _unitOfWork.Products.UpdateAsync(mappedProduct);
 
+        }
 
+        public async Task<ProductDto> GetProductsPricesList()
+        {
+            var productsPrices = await _unitOfWork.Products.GetAllProductsWithPricesAsync();
 
+            var mappedProduct = _mapper.Map<ProductDto>(productsPrices);
+
+            return mappedProduct;
+        }
+
+        public async Task<ProductDto> GetProductsLowStockAsync()
+        {
+            var productsLowStock = _unitOfWork.Products.GetProductsWithLowStockAsync();
+
+            var productMapped = _mapper.Map<ProductDto>(productsLowStock);
+
+            return productMapped;
         }
     }
 }

@@ -10,6 +10,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.FluentApis
     {
         public void Configure(EntityTypeBuilder<CustomerEntity> builder)
         {
+            builder.HasIndex(c => c.Name);
             
         }
     }

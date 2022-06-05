@@ -6,5 +6,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.IRepositories
     {
         public CategoryEntity GetCategoryByName(string name);
         public Task<CategoryEntity> GetCategoryByNameAsync(string name);
+
+
     }
 }

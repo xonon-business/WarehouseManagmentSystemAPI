@@ -6,7 +6,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.UniteOfWork
     {
         public IProductsRepository Products { get; }
         public ICategoryRepository Categories { get; }
-        public IBaseRepository<CustomerEntity> Customers { get; }
+        public ICustomerRepository Customers { get; }
         public IBaseRepository<StockEntity> Stocks { get; }
         public IBaseRepository<OrderEntity> Orders { get; }
         public IBaseRepository<UserEntity> Users { get; }
