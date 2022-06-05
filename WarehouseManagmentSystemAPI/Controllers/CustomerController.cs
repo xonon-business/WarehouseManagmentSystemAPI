@@ -16,17 +16,19 @@ namespace WarehouseManagmentSystemAPI.Controllers
 
         //CRUD
 
-        [HttpGet("AllCustomer")]
-        public async Task<IActionResult> GetAllCustomers()
-        {
-            return Ok( await _customersServices.GetAllAsync());
+        //[HttpGet("AllCustomer")]
+        //public async Task<IActionResult> GetAllCustomers()
+        //{
+        //    return Ok( await _customersServices.    ());
 
-        }
+        //}
 
-        [HttpPost("CreateCustomer")]
-        public async Task<IActionResult> CreateCustomer(CustomerDto dtoObject)
-        {
-            
-        }
+        //[HttpPost("CreateCustomer")]
+        //public async Task<IActionResult> CreateCustomer(CustomerDto dtoObject)
+        //{
+        //    _customersServices.Create(dtoObject);
+
+        //    return Created() 
+        //}
     }
 }

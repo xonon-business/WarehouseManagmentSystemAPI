@@ -20,6 +20,13 @@ namespace WarehouseManagmentSystemAPI.Services.ServicesImp
            return _baseRepository.Add(TT);
         }
 
+        public async Task<T> CreateAsync(T TT)
+        {
+            var _mapperEntity = _mapper.Map<T>(TT); 
+
+           return await _baseRepository.AddAsync(TT);
+        }
+
         public void Delete(Guid id)
         {
             _baseRepository.DeleteById(id);
