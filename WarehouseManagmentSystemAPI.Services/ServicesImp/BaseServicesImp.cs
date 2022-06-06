@@ -32,6 +32,16 @@ namespace WarehouseManagmentSystemAPI.Services.ServicesImp
             _baseRepository.DeleteById(id);
         }
 
+        public void DeleteAsync(Guid id)
+        {
+            _baseRepository.DeleteByIdAsync(id);
+        }
+
+        public async Task<IEnumerable<T>> GetAllASync()
+        {
+            return await _baseRepository.GetAllAsync();
+        }
+
         public T GetById(Guid id)
         {
             return _baseRepository.GetById(id);
@@ -47,10 +57,20 @@ namespace WarehouseManagmentSystemAPI.Services.ServicesImp
             return await _baseRepository.GetByIdAsync(id);
         }
 
-        public IEnumerable<T> Read()
+        public IEnumerable<T> GetAll()
         {
             return _baseRepository.GetAll();
         }
+
+        public async Task<T> UpdateByIdAsync(T obj,Guid id)
+        {
+            var TT = await _baseRepository.GetByIdAsync(id);
+
+            var _mapperEntity = _mapper.Map<T>(obj);
+
+            return await _baseRepository.UpdateAsync(_mapperEntity);
+        }
+
     }
     
     

@@ -4,7 +4,7 @@ namespace WarehouseManagmentSystemAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseController
     {
 
         private readonly IProductsServices IprodcutServices;
@@ -56,7 +56,7 @@ namespace WarehouseManagmentSystemAPI.Controllers
 
             var product =  IprodcutServices.Create(dtoObject);
 
-            return Created("~api/api/Products/GetAllProducts", product);
+            return Created("~/api/Products/GetAllProducts", product);
 
 
         }
@@ -76,6 +76,14 @@ namespace WarehouseManagmentSystemAPI.Controllers
                 return BadRequest();
             }
 
+            var Product = await IprodcutServices.GetByIdAsync(id);
+
+            if (Product == null)
+            {
+                return NotFound();
+            }
+
+
             await IprodcutServices.UpdateProductById(dtoObject, id);
 
             return Ok();
@@ -92,7 +100,7 @@ namespace WarehouseManagmentSystemAPI.Controllers
                 return NotFound(id);
             }
 
-            IprodcutServices.Delete(id);
+            IprodcutServices.DeleteAsync(id);
 
             return NoContent();
 

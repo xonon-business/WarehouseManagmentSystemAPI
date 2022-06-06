@@ -5,7 +5,10 @@ namespace WarehouseManagmentSystemAPI.Infrastructure.OrderEntityRoot
     public class OrderEntity
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid OrderId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long InvoiceNumber { get; set; }
         public string OrderStatus { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime OrderDueDate { get; set; }

@@ -41,8 +41,6 @@ namespace WarehouseManagmentSystemAPI.Services.ServicesImp
 
             var product = await _unitOfWork.Products.GetByIdAsync(id);
 
-            // ? validation
-
             var mappedProduct = _mapper.Map<ProductEntity>(obj);
 
             return await _unitOfWork.Products.UpdateAsync(mappedProduct);

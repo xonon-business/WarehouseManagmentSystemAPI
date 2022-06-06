@@ -1,6 +1,4 @@
 ﻿
-
-
 namespace WarehouseManagmentSystemAPI.Services.ServicesImp
 {
     public class CustomerServicesImp : BaseServicesImp<CustomerDto>, ICustomersServices
@@ -15,7 +13,14 @@ namespace WarehouseManagmentSystemAPI.Services.ServicesImp
             _unitOfWork = unitOfWork;
         }
 
+        public async Task<CustomerEntity> UpdateCustomerByIdAsync(CustomerDto obj, Guid id)
+        {
+            var customer = await _unitOfWork.Customers.GetByIdAsync(id);
 
+            var _mapperCustomer = _mapper.Map<CustomerEntity>(obj);
 
+            return await _unitOfWork.Customers.UpdateAsync(_mapperCustomer);
+
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WarehouseManagmentSystemAPI.Services.IServices
 {
-    public interface IOrdersServices
+    public interface IOrdersServices:IBaseServices<OrderDto>
     {
 
     }

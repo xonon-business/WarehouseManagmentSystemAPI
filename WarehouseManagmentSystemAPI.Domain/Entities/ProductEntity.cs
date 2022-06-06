@@ -18,12 +18,8 @@ namespace WarehouseManagmentSystemAPI.Domain.Entities
         public Guid CategoryIdFK { get; set; }
         public CategoryEntity Category { get; set; }
         public byte[]? ProductImage { get; set; }
-
         public List<OrderToItemsEntity> OrderToItemsEntity { get; set;}
         public ICollection<OrderEntity> orders { get; set; }
-
-
-
 
     }
 }

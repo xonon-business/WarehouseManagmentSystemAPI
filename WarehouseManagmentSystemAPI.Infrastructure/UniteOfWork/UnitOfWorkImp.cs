@@ -14,7 +14,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure
 
         public IBaseRepository<StockEntity> Stocks { get; private set; }
 
-        public IBaseRepository<OrderEntity> Orders { get; private set; }
+        public IOrderRepository Orders { get; private set; }
 
         public IBaseRepository<UserEntity> Users { get; private set; }
 
@@ -28,7 +28,7 @@ namespace WarehouseManagmentSystemAPI.Infrastructure
             Categories = new CategoryRepositoryImp (_db);
             Customers = new CustomerRepositoryImp(_db);
             Stocks = new BaseRepositoryImp<StockEntity>(_db);
-            Orders = new BaseRepositoryImp<OrderEntity>(_db);
+            Orders = new OrderRepositoryImp(_db);
             Users = new BaseRepositoryImp<UserEntity>(_db);
             Roles = new BaseRepositoryImp<RoleEntity>(_db);
 
