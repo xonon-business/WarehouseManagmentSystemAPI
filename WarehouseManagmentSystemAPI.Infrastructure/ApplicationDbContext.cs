@@ -14,13 +14,11 @@ namespace WarehouseManagmentSystemAPI.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.ApplyConfiguration(new ProductsFluentApi());
             modelBuilder.ApplyConfiguration(new CategoriesFluentApi());
             modelBuilder.ApplyConfiguration(new CustomerFluentApi());
             modelBuilder.ApplyConfiguration(new OrderFluentApi());
-            
-
-            
 
         }
 
